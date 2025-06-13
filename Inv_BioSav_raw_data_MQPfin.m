@@ -44,23 +44,23 @@ bx = fftshift(fft2(Bx));
 by = fftshift(fft2(By));
 bz = fftshift(fft2(Bz));
 
-%%% TRYING WINDOW
-% Determine kmax to include 80% of radial frequency range
-kx_nyq = pi / xDelt;
-ky_nyq = pi / yDelt;
-k_nyq = sqrt(kx_nyq^2 + ky_nyq^2);  % Radial Nyquist frequency
-kmax_ratio = 0.7;  % include 80% of radial frequency content
-kmax = kmax_ratio * k_nyq;
-
-% Hann taper in radial frequency domain: 0.5 * (1 + cos(pi * |K| / kmax)) for |K| <= kmax
-HannFilter = 0.5 * (1 + cos(pi * Kmag / kmax));
-HannFilter(Kmag > kmax) = 0;  % zero out values beyond cutoff
-
-% Apply window to Fourier-transformed magnetic field components
-bx = HannFilter .* bx;
-by = HannFilter .* by;
-bz = HannFilter .* bz;
-%%%
+% % % %%% TRYING WINDOW
+% % % % Determine kmax to include 80% of radial frequency range
+% % % kx_nyq = pi / xDelt;
+% % % ky_nyq = pi / yDelt;
+% % % k_nyq = sqrt(kx_nyq^2 + ky_nyq^2);  % Radial Nyquist frequency
+% % % kmax_ratio = 0.8;  % include 80% of radial frequency content
+% % % kmax = kmax_ratio * k_nyq;
+% % % 
+% % % % Hann taper in radial frequency domain: 0.5 * (1 + cos(pi * |K| / kmax)) for |K| <= kmax
+% % % HannFilter = 0.5 * (1 + cos(pi * Kmag / kmax));
+% % % HannFilter(Kmag > kmax) = 0;  % zero out values beyond cutoff
+% % % 
+% % % % Apply window to Fourier-transformed magnetic field components
+% % % bx = HannFilter .* bx;
+% % % by = HannFilter .* by;
+% % % bz = HannFilter .* bz;
+% % % %%%
 
 g= mu0/2 * exp(-Kmag * zp); % Fourier green's function
 
