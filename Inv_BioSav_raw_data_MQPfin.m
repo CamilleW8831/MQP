@@ -26,7 +26,7 @@ zp = 5e-7; % estimated height of the measurement plane [m]
 % "OFF" to ignore the hanning window
 % To avoid unncessary processing, if the hanning window is not used, set
 % hannWindow= "OFF"
-hannWindow= "ON";
+hannWindow= "OFF";
 
 % hannRatio defines a radius of spatial frequencies allowed to remain within 
 % the reconstruction based on a percentage of the largest magnitude.
@@ -37,7 +37,7 @@ hannRatio= 0.8;
 % Magnetic field plotting:
 % "ON" to plot magnetic fields
 % "OFF" to only plot current density components and magnitude
-plotMagField= "ON";
+plotMagField= "OFF";
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -173,7 +173,7 @@ xlabel("x [m]");
 ylabel("y [m]");
 % graph/text settings: 
 set(gca, 'Ydir', 'normal', 'FontSize', 12, 'TickLength',[0, 0]); 
-set(gcf, 'Color', 'w', 'Position', [550, 350, 400, 400]);
+set(gcf, 'Color', 'w', 'Position', [100, 350, 400, 400]);
 axis equal tight;
 % color bar bounds and other settings:
 colormap(magma);
@@ -192,7 +192,7 @@ xlabel("x [m]");
 ylabel("y [m]");
 % graph/text settings: 
 set(gca, 'Ydir', 'normal', 'FontSize', 12, 'TickLength',[0, 0]); 
-set(gcf, 'Color', 'w', 'Position', [100, 350, 400, 400]);
+set(gcf, 'Color', 'w', 'Position', [550, 350, 400, 400]);
 axis equal tight;
 % color bar bounds and other settings:
 colormap(magma); 
