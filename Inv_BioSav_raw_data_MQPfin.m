@@ -97,7 +97,7 @@ bz = fftshift(fft2(Bz));
 % HANNING WINDOW
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-if hannWindow == "YES"
+if hannWindow == "ON"
 
     kx_nyq = pi / xDelta; % x Nyquist frequency [rad/m]
     ky_nyq = pi / yDelta; % y Nyquist frequenct [rad/m]
